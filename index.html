@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rifqi an-nur – Portfolio</title>
+    <link rel="icon" href="https://via.placeholder.com/32" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <script>
+        // Simple filter logic for gallery
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('[data-filter]');
+            const cards = document.querySelectorAll('[data-tech]');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('bg-black', 'text-white'));
+                    btn.classList.add('bg-black', 'text-white');
+                    const tech = btn.getAttribute('data-filter');
+                    cards.forEach(card => {
+                        if (tech === 'all' || card.getAttribute('data-tech').includes(tech)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body class="bg-white text-neutral-900 min-h-screen">
+
+    <!-- Intro Section -->
+    <section class="relative flex flex-col md:flex-row items-center justify-between px-8 pt-16 pb-8 md:pb-24 gap-12">
+        <div class="flex-1 flex flex-col gap-6">
+            <span class="text-5xl md:text-6xl font-bold tracking-tight leading-tight">
+                Hi, I'm Rifqi! <span class="inline-block animate-bounce">👋</span>
+            </span>
+            <p class="text-lg md:text-xl text-neutral-600 max-w-lg">
+                Building playful things with code.<br>
+                I love <span class="bg-yellow-100 px-2 rounded">Watch movies</span>, <span class="bg-pink-100 px-2 rounded">Listening Music</span>, and <span class="bg-blue-100 px-2 rounded">Playing Games</span>.
+            </p>
+            <div class="flex gap-4 mt-2">
+                <a href="https://instagram.com/rifqiarn" target="_blank" aria-label="Instagram" class="hover:scale-110 transition">
+                    <svg class="w-7 h-7 text-pink-500" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm6.25 1.25a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+                </a>
+                <a href="mailto:rifqiaunurr1902@gmail.com" target="_blank" aria-label="Gmail" class="hover:scale-110 transition">
+                    <svg class="w-7 h-7 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zm-16 12V8.236l7.445 6.71a1 1 0 0 0 1.11 0L20 8.236V18H4z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="flex-1 flex justify-end">
+            <img src="./img/profile-picture.jpg" alt="Andre Daffari Sinaga" class="rounded-3xl shadow-2xl w-56 h-56 object-cover border-8 border-white hover:scale-105 hover:rotate-2 transition duration-300" />
+        </div>
+    </section>
+
+    <!-- Hobby, About Me, Social Media Section -->
+    <section class="flex flex-col md:flex-row gap-8 md:gap-16 px-4 md:px-8 mb-24 h-auto md:h-[340px]">
+        <!-- Hobby -->
+        <div class="flex-1 flex flex-col gap-4 md:gap-6 justify-center bg-white rounded-xl shadow-sm p-4 md:p-6 mb-8 md:mb-0 h-full">
+            <h2 class="text-2xl font-semibold mb-4 tracking-tight">Hobby <span class="text-3xl">🏸</span></h2>
+            <ul class="space-y-4 text-base md:text-lg">
+                <li class="flex items-center gap-3">
+                    <span class="text-2xl">🎮</span>
+                    <span>Enjoys gaming, especially strategy and puzzle games.</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="text-2xl">🎵</span>
+                    <span>Listening to lofi beats and exploring new music genres.</span>
+                </li>
+                <li class="flex items-center gap-3">
+                    <span class="text-2xl">🎞️</span>
+                    <span>Watch movies especially the thriller genre.</span>
+                </li>
+            </ul>
+        </div>
+        <!-- About Me -->
+        <div class="flex-1 flex flex-col gap-4 md:gap-6 justify-center bg-white rounded-xl shadow-sm p-4 md:p-6 mb-8 md:mb-0 h-full">
+            <h2 class="text-2xl font-semibold mb-4 tracking-tight">About Me <span class="text-3xl">👨‍💻</span></h2>
+            <p class="text-base md:text-lg text-neutral-700 mt-2 md:mt-0">
+                I am a passionate and curious student with a strong interest in technology, computers, and how things work behind the scenes.
+                While I may not have professional experience yet, I have spent a lot of time learning on my own and building a solid foundation 
+                in tech-related skills. I have basic knowledge of the programming languages HTML, Python, and MySQL, and I enjoy using them to
+                understand how software and data systems operate. I believe that with dedication, a growth mindset, and a willingness to learn,
+                I can contribute meaningfully to any team or project. I am excited about the opportunity to turn my passion into real-world experience
+                and continue developing my abilities in the tech industry.
+            </p>
+        </div>
+        <!-- Social Media -->
+        <div class="flex-1 flex flex-col gap-4 md:gap-6 justify-center bg-white rounded-xl shadow-sm p-4 md:p-6 h-full">
+            <h2 class="text-2xl font-semibold mb-4 tracking-tight">Social Media <span class="text-3xl">🌐</span></h2>
+            <ul class="space-y-4 text-base md:text-lg">
+                <li class="flex items-center gap-3">
+                    <a href="https://instagram.com/rifqiarn" target="_blank" class="flex items-center gap-2 hover:underline">
+                        <svg class="w-6 h-6 text-pink-500" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm6.25 1.25a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+                        <span>Instagram</span>
+                    </a>
+                </li>
+                <li class="flex items-center gap-3">
+                    <a href="mailto:rifqiaunurr1902@gmail.com" target="_blank" class="flex items-center gap-2 hover:underline">
+                        <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zm-16 12V8.236l7.445 6.71a1 1 0 0 0 1.11 0L20 8.236V18H4z"/>
+                        </svg>
+                        <span>Gmail</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <br><br>
+    
+
+    <!-- Education Section -->
+    <section class="px-8 mb-24 mt-12">
+        <hr>
+        <h2 class="text-2xl font-semibold mb-6 tracking-tight">Pendidikan <span class="text-3xl">🎓</span></h2>
+        <ul class="space-y-6 text-lg">
+            <li class="flex flex-col md:flex-row md:items-center md:gap-4">
+                <span class="font-bold">University</span>
+                <span class="text-neutral-600">| Muhammadiyah University of North Sumatra</span>
+                <span class="text-neutral-400 md:ml-auto">2024 - Now</span>
+            </li>
+            <li class="flex flex-col md:flex-row md:items-center md:gap-4">
+                <span class="font-bold">High School</span>
+                <span class="text-neutral-600">| Senior High School 1 Rantau Selatan</span>
+                <span class="text-neutral-400 md:ml-auto">2021 - 2024</span>
+            </li>
+        </ul>
+    </section>
+
+    <footer class="text-center text-neutral-400 text-sm py-8">
+        &copy; 2024 Rifqi Annur. 
+    </footer>
+</body>
+</html>
